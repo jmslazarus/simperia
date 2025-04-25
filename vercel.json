@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "simperia",
+    "builds": [
+        {
+            "use": "@vercel/static"
+        }
+    ],
+    "rewrites": []
+}
