@@ -12,7 +12,7 @@ elation.extend('pointerlock', function(controls) {
     this.sound = elation.utils.sound.system;
     this.sound.load(`neutronic`,`src/components/space/sounds/neutronic.wav`, (buffer) => {
       console.log('-!- Audio.Loaded: song', 'neutronic')
-      this.sound.setVolume('neutronic', 0.5)
+      this.sound.setVolume('neutronic', 0.70)
       this.sound.loop('neutronic');
     });
   }

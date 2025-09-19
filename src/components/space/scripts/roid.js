@@ -157,6 +157,7 @@ elation.extend("space.meshes.roid", function(args) {
     var volume = 1 - Math.abs(distance / soundRange)
 
     this.controller.sound.load(`explode`,`src/components/space/sounds/explode.wav`, (buffer) => {
+      console.log('asteroid collision', {distance, volume})
       this.controller.sound.setVolume('explode', volume)
       this.controller.sound.play('explode');
       this.controller.scene.remove(this.mesh);
