@@ -153,7 +153,7 @@ elation.extend("space.meshes.roid", function(args) {
     var dy = cameraPos.y - objectPos.y;
     var dz = cameraPos.z - objectPos.z;
     var distance = Math.abs(Math.sqrt(dx * dx + dy * dy + dz * dz));
-    let soundRange = 3000
+    let soundRange = 6000
     var volume = 1 - Math.abs(distance / soundRange)
 
     this.controller.sound.load(`explode`,`src/components/space/sounds/explode.wav`, (buffer) => {
