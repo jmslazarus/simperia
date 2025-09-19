@@ -147,7 +147,17 @@ elation.extend("space.meshes.roid", function(args) {
   }
 
   this.playExplosionSound = function() {
+    let cameraPos = this.controller.camera.position
+    let objectPos = this.mesh.position
+    var dx = cameraPos.x - objectPos.x;
+    var dy = cameraPos.y - objectPos.y;
+    var dz = cameraPos.z - objectPos.z;
+    var distance = Math.abs(Math.sqrt(dx * dx + dy * dy + dz * dz));
+    let soundRange = 3000
+    var volume = 1 - Math.abs(distance / soundRange)
+
     this.controller.sound.load(`explode`,`src/components/space/sounds/explode.wav`, (buffer) => {
+      this.controller.sound.setVolume('explode', volume)
       this.controller.sound.play('explode');
       this.controller.scene.remove(this.mesh);
       this.visible = false;
