@@ -10,10 +10,10 @@ elation.extend('pointerlock', function(controls) {
     
     elation.html.addclass(document.body, 'show_interface');
     this.sound = elation.utils.sound.system;
-    // this.sound.load(`unknownsample`,`src/components/space/sounds/unknownsample2.wav`, (buffer) => {
-    //   console.log('-!- Audio.Loaded: song', 'unknownsample')
-    //   this.sound.loop('unknownsample');
-    // });
+    this.sound.load(`neutronic`,`src/components/space/sounds/neutronic.wav`, (buffer) => {
+      console.log('-!- Audio.Loaded: song', 'neutronic')
+      this.sound.loop('neutronic');
+    });
   }
   
   this.click = function(element) {
@@ -45,7 +45,7 @@ elation.extend('pointerlock', function(controls) {
   this.pointerlockchange = function(event) {
     if (document.pointerLockElement === this.container || document.mozPointerLockElement === this.container || document.webkitPointerLockElement === this.container) {
       this.locked = true;
-      // this.sound.loop('unknownsample');
+      this.sound.loop('neutronic');
       this.sound.loop('engine');
       this.sound.loop('powerplant');
       this.sound.loop('radar');
@@ -54,7 +54,7 @@ elation.extend('pointerlock', function(controls) {
       elation.html.removeclass(document.body, 'show_interface');
     } else {
       this.locked = false;
-      // this.sound.pause('unknownsample');
+      this.sound.pause('neutronic');
       this.sound.pause('engine');
       this.sound.pause('powerplant');
       this.sound.pause('radar');

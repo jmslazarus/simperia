@@ -6,7 +6,7 @@ elation.extend("space.meshes.player", function(args) {
   this.burner = 2.0;
   this.booster = 5;
   this.throttle = 0;
-  this.throttle_mode = 'Analog';
+  this.throttle_mode = 'Momentary';
   this.throttle_old = 0;
   this.throttle_sensitivity = .01;
   this.throttle_up = false;
